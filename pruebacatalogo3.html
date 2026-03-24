@@ -44,13 +44,10 @@ header {
 .card img {
     width:100%;
     height:200px;
-    object-fit:cover;
+    object-fit:contain;
+    background:#fff;
     border-radius:8px;
     margin-bottom:10px;
-}
-
-.card h3 {
-    font-weight:400;
 }
 
 .price {
@@ -66,16 +63,10 @@ header {
     border:none;
     border-radius:6px;
     cursor:pointer;
-    transition: all 0.2s ease;
 }
 
 .btn:hover {
     background:white;
-    transform: scale(1.05);
-}
-
-.btn:active {
-    transform: scale(0.9);
 }
 
 .btn-carrito {
@@ -112,15 +103,6 @@ header {
 .item {
     border-bottom:1px solid #333;
     padding:10px 0;
-    font-size:14px;
-}
-
-.item button {
-    background:red;
-    border:none;
-    color:white;
-    cursor:pointer;
-    margin-left:5px;
 }
 
 .total {
@@ -138,11 +120,6 @@ header {
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-volver:hover {
-    background: white;
 }
 </style>
 </head>
@@ -171,36 +148,36 @@ header {
 <script>
 
 const perfumes = [
-{nombre:"KHAMRAH", precio:50000},
-{nombre:"KHAMRAH QAHWA", precio:49000},
-{nombre:"PHILOS PURA", precio:50000},
-{nombre:"9 PM", precio:58000},
-{nombre:"CDN INTENSE MAN EDT 105ML", precio:70000},
-{nombre:"CDN URBAN MAN ELIXIR 105ML", precio:72000},
-{nombre:"FAKHAR BLACK", precio:55000},
-{nombre:"OUD FOR GLORY", precio:50000},
-{nombre:"HONOR AND GLORY", precio:51000},
-{nombre:"ASAD BOURBON", precio:60000},
-{nombre:"ASAD", precio:55000},
-{nombre:"HIS CONFESSION", precio:62000},
-{nombre:"THE KINGDOM", precio:60000},
-{nombre:"9 AM DIVE", precio:65000},
-{nombre:"MANDARIN SKY", precio:58000},
-{nombre:"LIQUID BRUN", precio:72000},
-{nombre:"ODYSSEY AQUA", precio:74000},
-{nombre:"HAWAS CLASICO", precio:56000},
-{nombre:"HAWAS ICE", precio:85000},
+{nombre:"KHAMRAH", precio:50000, img:"perfume1.jpg"},
+{nombre:"KHAMRAH QAHWA", precio:49000, img:"perfume2.jpg"},
+{nombre:"PHILOS PURA", precio:50000, img:"perfume3.jpg"},
+{nombre:"9 PM", precio:58000, img:"perfume4.jpg"},
+{nombre:"CDN INTENSE MAN EDT 105ML", precio:70000, img:"perfume5.jpg"},
+{nombre:"CDN URBAN MAN ELIXIR 105ML", precio:72000, img:"perfume6.jpg"},
+{nombre:"FAKHAR BLACK", precio:55000, img:"perfume7.jpg"},
+{nombre:"OUD FOR GLORY", precio:50000, img:"perfume8.jpg"},
+{nombre:"HONOR AND GLORY", precio:51000, img:"perfume9.jpg"},
+{nombre:"ASAD BOURBON", precio:60000, img:"perfume10.jpg"},
+{nombre:"ASAD", precio:55000, img:"perfume11.jpg"},
+{nombre:"HIS CONFESSION", precio:62000, img:"perfume12.jpg"},
+{nombre:"THE KINGDOM", precio:60000, img:"perfume13.jpg"},
+{nombre:"9 AM DIVE", precio:65000, img:"perfume14.jpg"},
+{nombre:"MANDARIN SKY", precio:58000, img:"perfume15.jpg"},
+{nombre:"LIQUID BRUN", precio:72000, img:"perfume16.jpg"},
+{nombre:"ODYSSEY AQUA", precio:74000, img:"perfume17.jpg"},
+{nombre:"HAWAS CLASICO", precio:56000, img:"perfume18.jpg"},
+{nombre:"HAWAS ICE", precio:85000, img:"perfume19.jpg"},
 
-// NUEVOS DESDE EL 20 👇
-{nombre:"ASAD ZANZIBAR", precio:55000},
-{nombre:"CONFIDENTIAL GOLD", precio:45000},
-{nombre:"HAYAATI", precio:43000},
-{nombre:"LATTAFA PISA", precio:80000},
-{nombre:"ART OF UNIVERSE", precio:70000},
-{nombre:"QAED AL FURSAN", precio:45000},
-{nombre:"VINTAGE RADIO", precio:56000},
-{nombre:"AQUA DUBAI 100ML", precio:100000},
-{nombre:"GOLD EDITION 120ML", precio:95000}
+// NUEVOS CORRECTOS 👇
+{nombre:"ASAD ZANZIBAR", precio:55000, img:"perfume20.jpg"},
+{nombre:"CONFIDENTIAL GOLD", precio:45000, img:"perfume21.jpg"},
+{nombre:"HAYAATI", precio:43000, img:"perfume22.jpg"},
+{nombre:"LATTAFA PISA", precio:80000, img:"perfume23.jpg"},
+{nombre:"ART OF UNIVERSE", precio:70000, img:"perfume24.jpg"},
+{nombre:"QAED AL FURSAN", precio:45000, img:"perfume25.jpg"},
+{nombre:"VINTAGE RADIO", precio:56000, img:"perfume26.jpg"},
+{nombre:"AQUA DUBAI 100ML", precio:100000, img:"perfume27.jpg"},
+{nombre:"GOLD EDITION 120ML", precio:95000, img:"perfume28.jpg"}
 ];
 
 let carrito = [];
@@ -211,10 +188,10 @@ const totalEl = document.getElementById("total");
 
 function mostrar(){
 grid.innerHTML="";
-perfumes.forEach((p,i)=>{
+perfumes.forEach(p=>{
 grid.innerHTML += `
 <div class="card">
-<img src="perfume${i+1}.jpg">
+<img src="${p.img}">
 <h3>${p.nombre}</h3>
 <p class="price">$${p.precio}</p>
 <button class="btn" onclick='agregar("${p.nombre}", ${p.precio})'>Agregar</button>
