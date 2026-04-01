@@ -74,11 +74,6 @@ nav a:hover {
     display: block;
 }
 
-/* VERSION CELULAR PERFUMES */
-.mobile-perfumes {
-    display: none;
-}
-
 /* HERO */
 .hero {
     height: 90vh;
@@ -195,41 +190,26 @@ footer {
     }
 }
 
-/* 📱 CELULAR PRO */
+/* 📱 NAV EN GRILLA (3 COLUMNAS) */
 @media (max-width: 600px) {
 
     nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-    }
-
-    nav a {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* ocultar dropdown */
-    .dropdown {
-        display: none;
-    }
-
-    /* mostrar lista simple */
-    .mobile-perfumes {
-        display: block;
-    }
-
-    .mobile-perfumes a {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
         padding: 10px;
-        color: #c9a96e;
-        text-decoration: none;
-        text-align: center;
     }
 
-    .mobile-perfumes a:hover {
-        background: #c9a96e;
-        color: black;
+    nav a,
+    .dropdown > a {
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    /* ocultamos dropdown en celular */
+    .dropdown-content {
+        display: none !important;
     }
 }
 
@@ -241,20 +221,12 @@ footer {
 <nav>
     <a href="index.html">Inicio</a>
 
-    <!-- PC -->
     <div class="dropdown">
-        <a href="#">Perfumes</a>
+        <a href="pruebacatalogo3.html">Perfumes</a>
         <div class="dropdown-content">
             <a href="pruebacatalogo3.html">Hombre</a>
             <a href="catalogomujer.html">Mujer</a>
         </div>
-    </div>
-
-    <!-- CELULAR -->
-    <div class="mobile-perfumes">
-        <a href="#">Perfumes</a>
-        <a href="pruebacatalogo3.html">Hombre</a>
-        <a href="catalogomujer.html">Mujer</a>
     </div>
 
     <a href="catalogo-decants.html">Decants</a>
