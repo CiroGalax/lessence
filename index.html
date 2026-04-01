@@ -71,7 +71,7 @@ nav a:hover {
     color: #ccc;
 }
 
-/* BOTONES */
+/* BOTÓN PRINCIPAL */
 .btn {
     margin-top: 20px;
     padding: 14px 30px;
@@ -80,6 +80,36 @@ nav a:hover {
     color: black;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0 0 15px rgba(201,169,110,0.4);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(201,169,110,0.8);
+}
+
+/* SUB BOTONES HERO */
+.hero-sub {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.hero-sub a {
+    color: #c9a96e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid #c9a96e;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.hero-sub a:hover {
+    background: #c9a96e;
+    color: black;
+    box-shadow: 0 0 15px rgba(201,169,110,0.6);
 }
 
 /* GRID */
@@ -149,7 +179,7 @@ footer {
     background: black;
 }
 
-/* ANIMACION */
+/* ANIMACIÓN LOGO */
 @keyframes glow {
     from {
         filter: drop-shadow(0 0 10px rgba(201,169,110,0.4));
@@ -159,7 +189,7 @@ footer {
     }
 }
 
-/* 📱 CELULAR */
+/* RESPONSIVE */
 @media (max-width: 600px) {
 
     nav {
@@ -169,6 +199,15 @@ footer {
     nav a {
         font-size: 14px;
         padding: 8px 10px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-sub {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -189,6 +228,11 @@ footer {
     <p>Fragancias exclusivas de alta gama</p>
 
     <a href="pruebacatalogo3.html" class="btn">Ver Perfumes</a>
+
+    <div class="hero-sub">
+        <a href="pruebacatalogo3.html">Hombre</a>
+        <a href="catalogomujer.html">Mujer</a>
+    </div>
 </section>
 
 <section class="grid">
