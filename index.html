@@ -43,19 +43,9 @@ nav a:hover {
     color: black;
 }
 
-/* DROPDOWN */
+/* DROPDOWN (PC) */
 .dropdown {
     position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.dropdown > a {
-    color: #c9a96e;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 8px;
 }
 
 .dropdown-content {
@@ -65,6 +55,7 @@ nav a:hover {
     background: #111;
     border-radius: 8px;
     border: 1px solid #222;
+    overflow: hidden;
 }
 
 .dropdown-content a {
@@ -81,6 +72,11 @@ nav a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* VERSION CELULAR PERFUMES */
+.mobile-perfumes {
+    display: none;
 }
 
 /* HERO */
@@ -176,7 +172,6 @@ nav a:hover {
     font-size: 14px;
 }
 
-/* aparece al pasar el mouse */
 .card:hover .sub-buttons {
     opacity: 1;
     transform: translateY(0);
@@ -199,7 +194,8 @@ footer {
         filter: drop-shadow(0 0 25px rgba(201,169,110,0.9));
     }
 }
-/* MEJORA NAV EN CELULAR */
+
+/* 📱 CELULAR PRO */
 @media (max-width: 600px) {
 
     nav {
@@ -208,30 +204,35 @@ footer {
         gap: 5px;
     }
 
-    nav a,
-    .dropdown > a {
-        display: block;
+    nav a {
         width: 100%;
         text-align: center;
     }
 
-    /* dropdown en celular */
-    .dropdown-content {
-        position: static;
-        border: none;
-        background: #111;
+    /* ocultar dropdown */
+    .dropdown {
         display: none;
     }
 
-    /* se abre al tocar */
-    .dropdown:active .dropdown-content {
+    /* mostrar lista simple */
+    .mobile-perfumes {
         display: block;
     }
 
-    .dropdown-content a {
-        padding: 12px;
+    .mobile-perfumes a {
+        display: block;
+        padding: 10px;
+        color: #c9a96e;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .mobile-perfumes a:hover {
+        background: #c9a96e;
+        color: black;
     }
 }
+
 </style>
 </head>
 
@@ -240,6 +241,7 @@ footer {
 <nav>
     <a href="index.html">Inicio</a>
 
+    <!-- PC -->
     <div class="dropdown">
         <a href="#">Perfumes</a>
         <div class="dropdown-content">
@@ -248,12 +250,18 @@ footer {
         </div>
     </div>
 
+    <!-- CELULAR -->
+    <div class="mobile-perfumes">
+        <a href="#">Perfumes</a>
+        <a href="pruebacatalogo3.html">Hombre</a>
+        <a href="catalogomujer.html">Mujer</a>
+    </div>
+
     <a href="catalogo-decants.html">Decants</a>
     <a href="informacion1.html">Información</a>
     <a href="contacto1.html">Contacto</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
     <img src="Icono L´Essence copia.jpg">
     <h1>L´Essence</h1>
@@ -262,10 +270,8 @@ footer {
     <a href="pruebacatalogo3.html" class="btn">Ver Perfumes</a>
 </section>
 
-<!-- GRID -->
 <section class="grid">
 
-    <!-- PERFUMES CON OPCIONES -->
     <div class="card">
         <img src="banner perfume.jpg">
         <div class="card-content">
@@ -278,7 +284,6 @@ footer {
         </div>
     </div>
 
-    <!-- DECANTS -->
     <a href="catalogo-decants.html" class="card">
         <img src="banner decant.jpg">
         <div class="card-content">
