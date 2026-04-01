@@ -40,6 +40,38 @@ nav a {
 nav a:hover {
     background: #c9a96e;
     color: black;
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #111;
+    min-width: 160px;
+    top: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #c9a96e;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: #c9a96e;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 }
 
 /* HERO */
@@ -210,7 +242,15 @@ footer {
 
 <nav>
     <a href="index.html">Inicio</a>
-    <a href="pruebacatalogo3.html">Perfumes</a>
+
+    <div class="dropdown">
+        <a href="#">Perfumes</a>
+        <div class="dropdown-content">
+            <a href="pruebacatalogo3.html">Hombre</a>
+            <a href="catalogomujer.html">Mujer</a>
+        </div>
+    </div>
+
     <a href="catalogo-decants.html">Decants</a>
     <a href="informacion1.html">Información</a>
     <a href="contacto1.html">Contacto</a>
