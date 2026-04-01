@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     padding: 15px;
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(10px);
@@ -33,7 +33,7 @@ nav a {
     color: #c9a96e;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 14px;
+    padding: 8px 18px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -41,37 +41,6 @@ nav a {
 nav a:hover {
     background: #c9a96e;
     color: black;
-}
-
-/* DROPDOWN (PC) */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 45px;
-    background: #111;
-    border-radius: 8px;
-    border: 1px solid #222;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #c9a96e;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    background: #c9a96e;
-    color: black;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* HERO */
@@ -190,35 +159,17 @@ footer {
     }
 }
 
-/* 📱 NAV EN GRILLA (3 COLUMNAS) */
+/* 📱 CELULAR */
 @media (max-width: 600px) {
 
     nav {
-        display: grid;
-        grid-template-columns: repeat(3, 90px); /* tamaño fijo */
-        justify-content: center; /* centra todo el bloque */
-        gap: 12px;
-        padding: 15px 0;
+        gap: 20px;
     }
 
-    nav a,
-    .dropdown > a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 45px;
-        width: 90px;
-        font-size: 13px;
+    nav a {
+        font-size: 14px;
+        padding: 8px 10px;
     }
-
-    /* ocultar dropdown en celular */
-    .dropdown-content {
-        display: none !important;
-    }
-}
-    
-}
 }
 
 </style>
@@ -228,16 +179,6 @@ footer {
 
 <nav>
     <a href="index.html">Inicio</a>
-
-    <div class="dropdown">
-        <a href="pruebacatalogo3.html">Perfumes</a>
-        <div class="dropdown-content">
-            <a href="pruebacatalogo3.html">Hombre</a>
-            <a href="catalogomujer.html">Mujer</a>
-        </div>
-    </div>
-
-    <a href="catalogo-decants.html">Decants</a>
     <a href="informacion1.html">Información</a>
     <a href="contacto1.html">Contacto</a>
 </nav>
