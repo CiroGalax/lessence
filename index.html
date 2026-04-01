@@ -19,6 +19,7 @@ body {
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 15px;
     background: rgba(0,0,0,0.8);
@@ -41,21 +42,38 @@ nav a:hover {
     background: #c9a96e;
     color: black;
 }
-/* DROPDOWN */
+
+/* DROPDOWN BIEN HECHO */
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown > a {
+    color: #c9a96e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.dropdown > a:hover {
+    background: #c9a96e;
+    color: black;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 45px;
+    left: 0;
     background: #111;
-    min-width: 160px;
-    top: 40px;
     border-radius: 8px;
-    overflow: hidden;
     border: 1px solid #222;
+    min-width: 140px;
+    overflow: hidden;
 }
 
 .dropdown-content a {
@@ -72,7 +90,6 @@ nav a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
 }
 
 /* HERO */
@@ -307,14 +324,11 @@ footer {
     <small>&copy; 2026 L´Essence</small>
 </footer>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/5493584114412" target="_blank">
     💬
 </a>
 
-<!-- SCRIPT ANIMACIONES -->
 <script>
-
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -326,7 +340,6 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".card, .section").forEach(el => {
     observer.observe(el);
 });
-
 </script>
 
 </body>
